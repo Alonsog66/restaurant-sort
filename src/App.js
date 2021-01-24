@@ -52,8 +52,9 @@ function App() {
   }
 
   const labels = ['name', 'city', 'genre'];
-  const labelComponents = labels.map(el => (
+  const labelComponents = labels.map((el, i) => (
     <TextField
+      key={`TextField-${i}`}
       label={el[0].toUpperCase() + el.slice(1)}
       className={classes.textField}
       margin="dense"
