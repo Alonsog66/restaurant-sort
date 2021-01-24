@@ -2,15 +2,14 @@
   padding: 0;
   margin: 0;
   font-family: 'Georgia';
-  font-size: 85%;
+  font-size: 90%;
 }
 #App {
   background-image: url('sky.jpg');
-  height: 500px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  min-height: 100vh;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -27,6 +26,10 @@
   padding: 15px;
   border: solid 2px rgba(0, 0, 0, 0.698);
   box-shadow: 6px 6px rgba(0, 0, 0, 0.315);
+}
+
+#container-wrapper {
+  padding-top: 2vh;
 }
 
 #main-container {
@@ -65,5 +68,9 @@
 
 #prev-button,
 #next-button {
-  margin: 2.5px;
+  margin: 5px;
+  width: 8%;
+  height: 200%;
+  border: solid 1px rgba(0, 0, 0, 0.698);
+  box-shadow: 1.5px 1.5px rgba(0, 0, 0, 0.315);
 }

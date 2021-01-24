@@ -1,10 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
-import { TextField } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from './Components/Grid'
-import InputLabel from '@material-ui/core/InputLabel';
-import FormControl from '@material-ui/core/FormControl';
-import Select from '@material-ui/core/Select';
+import SearchBar from './Components/SearchBar'
+
 
 import './App.css';
 
@@ -68,15 +66,6 @@ function App() {
   }
 
 
-  const labels = ['name', 'genre', 'city'];
-  const labelComponents = labels.map((el, i) => (
-    <TextField
-      key={`TextField-${i}`}
-      label={el[0].toUpperCase() + el.slice(1)}
-      className={classes.textField}
-      margin="dense"
-      onChange={(e) => updateFilter(e, el)}
-    />))
 
   // Creating state options
   const states = [...(new Set(filteredRestaurants.map(el => el.state).sort()))];
@@ -85,21 +74,11 @@ function App() {
     <div id="App">
       <header id="header">
         <h1>Restaurant Search</h1>
-        <div>
-          {labelComponents}
-          <FormControl className={classes.formControl}>
-            <InputLabel >State</InputLabel>
-            <Select
-              native
-              onChange={(e) => updateFilter(e, 'state')}
-            >
-              <option aria-label="None" value="All">All</option>
-              {states.map((state, i) => (<option value={state} key={`stateChoice-${i}`}>{state}</option>))}
-            </Select>
-          </FormControl>
-        </div>
+        <SearchBar classes={classes} updateFilter={updateFilter} states={states} />
       </header>
-      {filteredRestaurants.length > 0 ? <Grid restaurants={filteredRestaurants} /> : "No restaurants found"}
+      <div id='container-wrapper'>
+        {filteredRestaurants.length > 0 ? <Grid restaurants={filteredRestaurants} /> : "No restaurants found"}
+      </div>
     </div>
   );
 }
