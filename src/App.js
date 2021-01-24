@@ -49,12 +49,15 @@ function App() {
 
   }, []);
 
+
   function updateFilter(e, filter) {
     if (filter === 'name') name.current = e.target.value;
     else if (filter === 'city') city.current = e.target.value;
     else if (filter === 'genre') genre.current = e.target.value;
     else if (filter === 'state') state.current = e.target.value;
+    filterRestaurants();
   }
+
   function filterRestaurants() {
     const filteredRestaurants = allRestaurants
       .filter(restaurant => restaurant.name.toLowerCase().includes(name.current.toLowerCase()))
@@ -72,11 +75,12 @@ function App() {
       label={el[0].toUpperCase() + el.slice(1)}
       className={classes.textField}
       margin="dense"
-      onChange={(e) => { updateFilter(e, el); filterRestaurants(); }}
+      onChange={(e) => updateFilter(e, el)}
     />))
 
   // Creating state options
-  const states = [...(new Set(allRestaurants.map(el => el.state)))];
+  const states = [...(new Set(filteredRestaurants.map(el => el.state).sort()))];
+
   return (
     <div id="App">
       <header id="header">
@@ -87,7 +91,7 @@ function App() {
             <InputLabel >State</InputLabel>
             <Select
               native
-              onChange={(e) => { updateFilter(e, 'state'); filterRestaurants(); }}
+              onChange={(e) => updateFilter(e, 'state')}
             >
               <option aria-label="None" value="All">All</option>
               {states.map((state, i) => (<option value={state} key={`stateChoice-${i}`}>{state}</option>))}
