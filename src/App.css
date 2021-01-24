@@ -2,6 +2,7 @@
   padding: 0;
   margin: 0;
   font-family: 'Georgia';
+  font-size: 85%;
 }
 #App {
   background-image: url('sky.jpg');
@@ -38,7 +39,7 @@
 }
 
 .box {
-  width: 400px;
+  width: 250px;
   background-color: rgba(176, 196, 222, 0.55);
   border-radius: 4px;
   margin: 1.5vw;
@@ -48,4 +49,15 @@
   justify-content: space-evenly;
   border: solid 2px rgba(0, 0, 0, 0.698);
   box-shadow: 6px 6px rgba(0, 0, 0, 0.315);
+}
+
+#buttons {
+  display: flex;
+  justify-content: center;
+  width: 110%;
+}
+
+#prev-button,
+#next-button {
+  margin: 2.5px;
 }
