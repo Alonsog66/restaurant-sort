@@ -26,8 +26,10 @@ function Grid({ restaurants }) {
   const boxes = restaurants.map((el, i) => (<Card key={`Card-${i}`} info={el} />))
   const trimmedBoxes = boxes.slice(startIndex, endIndex);
   return (
-    <Box id='grid'>
-      {trimmedBoxes}
+    <Box id='main-container'>
+      <div id='grid'>
+        {trimmedBoxes}
+      </div>
       <div id='buttons'>
         {startIndex === 0 ||
           <Button
