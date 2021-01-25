@@ -47,6 +47,7 @@ body,
 
 #grid {
   height: 100%;
+  max-width: 2000px;
   text-align: center;
   display: flex;
   flex-wrap: wrap;
@@ -56,6 +57,7 @@ body,
 
 .box {
   width: 250px;
+  max-height: 250px;
   background-color: rgba(176, 196, 222, 0.55);
   border-radius: 4px;
   margin: 1.5vw;
