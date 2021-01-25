@@ -4,6 +4,11 @@
   font-family: 'Georgia';
   font-size: 90%;
 }
+html,
+body,
+#root {
+  height: 100%;
+}
 #App {
   background-image: url('sky.jpg');
   background-position: center;
@@ -29,6 +34,7 @@
 }
 
 #container-wrapper {
+  height: 100%;
   padding-top: 2vh;
 }
 
@@ -41,6 +47,7 @@
 }
 
 #grid {
+  height: 100%;
   text-align: center;
   display: flex;
   flex-wrap: wrap;
