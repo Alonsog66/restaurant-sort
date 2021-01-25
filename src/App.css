@@ -43,7 +43,6 @@ body,
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding-bottom: 250px;
 }
 
 #grid {
@@ -71,13 +70,13 @@ body,
 #buttons {
   display: flex;
   justify-content: center;
+  padding-bottom: 5vh;
 }
 
 #prev-button,
 #next-button {
   margin: 5px;
   width: 8%;
-  height: 200%;
   border: solid 1px rgba(0, 0, 0, 0.698);
   box-shadow: 1.5px 1.5px rgba(0, 0, 0, 0.315);
 }
